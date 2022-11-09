@@ -1,10 +1,12 @@
-// class toDo {
-//   constructor(whatToDo, timeFrame, done) {
-//     this.whatToDo = whatToDo;
-//     this.timeFrame = timeFrame;
-//   }
-// }
+class toDo {
+  constructor(whatToDo, timeFrame, done) {
+    this.whatToDo = whatToDo;
+    this.timeFrame = timeFrame;
+    this.done = done;
+  }
+}
 
+let topics = document.createElement("h2");
 
 let thingsToDo = [
       "Frukost!",
@@ -20,8 +22,8 @@ let thingsToDo = [
   for (let i = 0; i < thingsToDo.length; i++) {
     let container = document.createElement("div");
     let notDone = document.createElement("ul");
-    let thingsDone = document.createElement("ul");
-    thingsDone.id = "taskDone";
+    // let thingsDone = document.createElement("ul");
+    // thingsDone.id = "taskDone";
     notDone.id = "notDone";
   
     notDone.innerHTML = thingsToDo[i];
@@ -31,15 +33,15 @@ let thingsToDo = [
     });
   
     container.appendChild(notDone);
-    container.appendChild(thingsDone);
+    // container.appendChild(thingsDone);
   
     document.body.appendChild(container);
   }
   
-  function handleClick(done) {
-    console.log("Du klickade på", done);
+  function handleClick(fixed) {
+    console.log("Du klickade på", fixed);
   
-    taskDone.push(done);
+    taskDone.push(fixed);
     createCartHTML();
   }
   

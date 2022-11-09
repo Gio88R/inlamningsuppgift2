@@ -1,12 +1,20 @@
-div {
-    width: 20vw;
+body {
     display: flex;
-    flex-wrap: wrap;
-    height: 20%;
-    background-color: grey;
-    border: 2px;
-    border-color: black;
-}
-ul {
-    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+
+    div {
+        width: 20vw;
+        flex-wrap: wrap;
+        border-style: dashed;
+        border-color: black;
+        display: flex;
+        margin: 10px;
+    }
+    ul {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        // flex-basis: auto;
+    }
 }
