@@ -2,7 +2,6 @@ class ToDo {
   constructor (tasks, finished) {
     this.tasks = tasks;
     this.finished = finished;
-    // this.status = status;
   };
 }
 
@@ -28,17 +27,15 @@ let thingsToDo = [
     let container = document.createElement("div");
     let thingsDone = document.createElement("ul");
     let tasks = document.createElement("li");
-    // thingsDone.id = "taskDone";
-    // tasks.id = "tasks";
   
     tasks.innerHTML = thingsToDo[i].tasks;
     // thingsDone.innerHTML = tasks;
     container.addEventListener("click", () => {
-    console.log("Done!", thingsToDo[i]);
+    // console.log("Done!", thingsToDo[i]);
     tasks.classList.add("task");
     tasks.classList.add("task--completed");
     thingsToDo[i].finished = true;
-    
+    console.log("Done!", thingsToDo[i]);
     });
   
     thingsDone.appendChild(tasks);
