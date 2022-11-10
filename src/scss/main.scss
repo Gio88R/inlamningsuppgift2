@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+
 
     div {
         width: 20vw;
@@ -12,9 +12,19 @@ body {
         margin: 10px;
     }
     ul {
-        display: flex;
+        // display: flex;
         text-align: center;
         align-items: center;
         // flex-basis: auto;
+        
     }
+    
+
+}
+.task--completed {
+    text-decoration: line-through;
+}
+h2 {
+    margin: 10px;
+    text-align: left;
 }

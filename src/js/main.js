@@ -1,58 +1,75 @@
-class toDo {
-  constructor(whatToDo, timeFrame, done) {
-    this.whatToDo = whatToDo;
-    this.timeFrame = timeFrame;
-    this.done = done;
-  }
+class ToDo {
+  constructor (tasks) {
+    this.tasks = tasks;
+    // this.status = status;
+  };
 }
 
-let topics = document.createElement("h2");
+
+
+let topic = document.createElement("h2");
+topic.innerHTML = "To do:";
+document.body.appendChild(topic);
+
 
 let thingsToDo = [
-      "Frukost!",
-      "Borsta tänderna",
-      "Study hard!",
-      "Lunch",
-      "Study harder!",
-      "Gå till gymmet",
-      "Dinner"
+      new ToDo ("Frukost!"),
+      new ToDo ("Borsta tänderna"),
+      new ToDo ("Study hard!"),
+      new ToDo ("Lunch"),
+      new ToDo ("Study harder!"),
+      new ToDo ("Gå till gymmet"),
+      new ToDo ("Dinner"),
   ];
-  let taskDone = [];
+  // let taskDone = [];
 
   for (let i = 0; i < thingsToDo.length; i++) {
     let container = document.createElement("div");
-    let notDone = document.createElement("ul");
-    // let thingsDone = document.createElement("ul");
+    let thingsDone = document.createElement("ul");
+    let tasks = document.createElement("li");
     // thingsDone.id = "taskDone";
-    notDone.id = "notDone";
+    // tasks.id = "tasks";
   
-    notDone.innerHTML = thingsToDo[i];
-  
+    tasks.innerHTML = thingsToDo[i].tasks;
+    // thingsDone.innerHTML = tasks;
     container.addEventListener("click", () => {
-      handleClick(thingsToDo[i]);
+    console.log("Done!", thingsToDo[i]);
+    tasks.classList.add("task");
+    tasks.classList.add("task--completed");
+    
     });
   
-    container.appendChild(notDone);
-    // container.appendChild(thingsDone);
+    thingsDone.appendChild(tasks);
+    container.appendChild(thingsDone);
+    
   
     document.body.appendChild(container);
+    // document.body.appendChild(tasks);
+
+    
   }
   
-  function handleClick(fixed) {
-    console.log("Du klickade på", fixed);
   
-    taskDone.push(fixed);
-    createCartHTML();
-  }
+  // function handleClick(fixed) {
+  //   console.log("Done!", fixed);
+  //   tasks.classList.add("task");
+  //   classList.add("task--completed");
+  //   taskDone.push(fixed);
+  // }
   
-  function createCartHTML() {
-    let cartContainer = document.getElementById("notDone");
-    cartContainer.innerHTML = "";
-    for (let i = 0; i < taskDone.length; i++) {
-      let notDone = document.createElement("ul");
+  // function createDone() {
+  //   let doneContainer = document.getElementById("tasks");
+  //   doneContainer.innerHTML = "done!";
+
+    
+  //   for (let i = 0; i < thingsToDo.length; i++) {
+  //     container[i].addEventListener("click", () => {
+  //       handleClick(thingsToDo[i]);
+  //   for (let i = 0; i < taskDone.length; i++) {
+  //       let tasks = document.createElement("ul");
   
-      notDone.innerHTML = taskDone[i].taskDone;
+  //      tasks.innerHTML = doneContainer;
   
-      cartContainer.appendChild(notDone);
-    }
-  }
+  //      doneContainer.appendChild(tasks);
+  //   }
+  // })}}
