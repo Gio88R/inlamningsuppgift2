@@ -1,12 +1,15 @@
 body {
     display: flex;
     flex-direction: column;
+    background-color: white;
 
 
     div {
         width: 20vw;
         flex-wrap: wrap;
-        border-style: dashed;
+        background-color: lightgray;
+        border-radius: 5px;
+        border-style: solid;
         border-color: black;
         display: flex;
         margin: 10px;
@@ -15,6 +18,7 @@ body {
         // display: flex;
         text-align: center;
         align-items: center;
+        // margin
         // flex-basis: auto;
         
     }
