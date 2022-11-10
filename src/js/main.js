@@ -1,6 +1,7 @@
 class ToDo {
-  constructor (tasks) {
+  constructor (tasks, finished) {
     this.tasks = tasks;
+    this.finished = finished;
     // this.status = status;
   };
 }
@@ -13,13 +14,13 @@ document.body.appendChild(topic);
 
 
 let thingsToDo = [
-      new ToDo ("Frukost!"),
-      new ToDo ("Borsta tänderna"),
-      new ToDo ("Study hard!"),
-      new ToDo ("Lunch"),
-      new ToDo ("Study harder!"),
-      new ToDo ("Gå till gymmet"),
-      new ToDo ("Dinner"),
+      new ToDo ("Frukost!", false),
+      new ToDo ("Borsta tänderna", false),
+      new ToDo ("Study hard!", false),
+      new ToDo ("Lunch", false),
+      new ToDo ("Study harder!", false),
+      new ToDo ("Gå till gymmet", false),
+      new ToDo ("Dinner", false),
   ];
   // let taskDone = [];
 
@@ -36,6 +37,7 @@ let thingsToDo = [
     console.log("Done!", thingsToDo[i]);
     tasks.classList.add("task");
     tasks.classList.add("task--completed");
+    thingsToDo[i].finished = true;
     
     });
   
